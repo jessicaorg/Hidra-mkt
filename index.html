@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<style>
+
+		/* clases paa ocultar header*/
+
+		#site_header{
+			visibility: hidden;
+		}
+
+		#v-banner{
+			background-image: url('bg-green-wv.png');
+			background-size: cover;
+			background-position: bottom center;
+			padding: 2em 1em;
+		}
+
+		#v-banner h1{
+			color: #fff;
+			text-shadow: 0 0 6px #7b7b7b;
+			font-weight: 700;
+			font-size: 3em;
+		}
+		#v-banner h2{
+			font-size: 1.2em;
+			color: #6d6d6d;
+		}
+
+		#v-info{
+			margin-top: 2em;
+			position: relative;
+			font-size: 1em;
+		}
+
+		#v-info h3{
+			font-size: 3em;
+			font-weight: 800;
+			color: #0596FF;
+			text-shadow: 0 0 4px #7b7b7b;
+		}
+
+
+		.card{
+			border: 0;
+		}
+		.card-header{
+			padding: .75rem 1.25rem;
+		    margin-bottom: 0;
+		    background-color: rgb(255 255 255);
+		    border-bottom: 0;
+		    box-shadow: 1px 0px 7px #7e7e7e9e;
+		    margin-top: .5em;
+		}
+
+		.btn-link{
+			font-weight: 700;
+    		color: #6c6c6c;
+    		background-color: transparent;
+		}
+
+		#bio-ericka{
+			padding: 2em 1em 0  1em;
+			background-color: #F2F2F2;
+		}
+
+		#bio-ericka h4{
+			font-size: 4em;
+			font-weight: 800;
+			color: #43D4B5;
+			text-shadow: 0 0 2px #7b7b7b;
+		}
+
+		#bio-ericka p{
+			font-size: 1em;
+			text-align: justify;
+		}
+
+		#bio-ericka img{
+			max-width: 350px;
+			width: 100%;
+
+		}
+
+		#yes-no{
+			margin-top: 2em;
+		}
+
+		#yes-no .cuadro{
+			box-shadow: 1px 0px 7px #7e7e7e9e;
+			padding: 2em 2em 2em 3em;
+			border-radius: 10px;
+			min-height: 550px;
+			font-size: 1.1em;
+			text-indent:-25px;
+		}
+
+		#yes-no .cuadro h4{
+			font-weight: 700;
+    		color: #6c6c6c;
+    		margin-bottom: 1em;
+		}
+
+		#yes-no .yes i{
+			color: #17C779;
+			font-size: 20px;
+			font-weight: 600;
+
+		}
+
+		#yes-no .no i{
+			color: #DC360A;
+			font-size: 20px;
+			font-weight: 900;
+
+		}
+
+		.check-head,.tache-head{
+			width: 100%;
+			max-width: 30px;
+		}
+
+		.check-img,.tache-img{
+			width: 100%;
+			max-width: 23px;
+		}
+
+		#bio-curso{
+			margin-top: 2em;
+		}
+
+		#bio-curso .cuadro{
+			box-shadow: 1px 0px 7px #7e7e7e9e;
+			padding: 2em 2em 2em 4em;
+			border-radius: 10px;
+
+		}
+
+		#bio-curso .cuadro h4{
+			font-size: 2em;
+			font-weight: 800;
+			color: #0596FF;
+			text-shadow: 0 0 2px #7b7b7b;
+			text-align: center;
+		}
+
+		#bio-curso .cuadro p{
+			font-size: 1em;
+			font-weight: 600;
+			font-size: 1.2em;
+			text-indent: -25px;
+		}
+
+		#bio-curso .cuadro p .check-curse{
+			max-width: 30px;
+			width: 100%;
+			margin-right: .2em;
+		}
+		
+		#cierre{
+			margin-top: 2em;
+			padding: 2em;
+			text-align: center;
+			background-image: url('bg-green-gradient.png');
+			background-position: bottom center;
+		}
+
+		
+
+		#cierre h5 span{
+			color: #43D4B5;
+			text-shadow: 0 0 2px #7b7b7b;
+			font-size: 2em;
+
+		}
+		#cierre h5 b{
+			color: #0596FF;
+			text-shadow: 0 0 2px #7b7b7b;
+			font-size: 2.5em;
+			font-weight: 900;
+		}
+
+		#cierre p{
+			font-size: 2em;
+			font-weight: 600;
+			color: #848484;
+			text-decoration:unset;
+		}
+
+		#cierre p strong{
+			color: #0596FF;
+			text-shadow: 0 0 2px #7b7b7b;
+			font-weight: 900;
+		}
+
+		
+
+		.enlace{
+			font-weight: 700;
+			display: block;
+			color: #fff;
+			background-color: #0596FF;
+			max-width: 300px;
+			width: 100%;
+			text-align: center;
+			margin: 2em auto;
+			border-radius: 10px;
+			padding: .5em;
+			font-size: 1.2em;
+			box-shadow: 1px 0px 7px #7e7e7e9e;
+			text-decoration: none;
+			transition: .3s ease;
+
+		}
+
+		 .enlace:hover{
+			background-color: #848484;
+			transition: .3s ease;
+			color: #fff;
+			text-decoration: none;
+		}
+		
+		@media only screen and (max-width: 480px) {
+			#v-info h3,p{
+				text-align: center;
+			}
+
+		  #v-info img{
+		  	display: none;
+		  }
+
+		  #bio-ericka h4{
+		  	font-size: 3em;
+		  	text-align: center;
+		  }
+
+		  #yes-no{
+		  	text-align: inherit;
+		  }
+
+		  #yes-no h4{
+		  	text-align: center;
+		  }
+
+		  #cierre h5 b{
+		  	font-size: 2em;
+		  }
+		}
+
+	</style>
+
+</head>
+<body>
+ 
+	<section id="v-banner">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-5">
+					<h1>EMPRENDE Y VENDE EN REDES SOCIALES</h1>
+					<h2>¿Cómo sería tu vida si emprendieras un nuevo negocio y vendieras en redes sociales?</h2>
+					<a class="enlace" href="https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=85936825-d1c55695-0a9b-4336-b706-13ce54ebeac9" target="_blank">COMPRAR CURSO</a>
+				</div>
+				<div class="col-md-7">
+					<iframe width="100%" height="415" src="https://www.youtube.com/embed/p8cs8yQtynk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="v-info" >
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<h3>¿Qué Aprenderé?</h3>
+					<p>Aprenderás las herramientas y estrategias de marketing claves que necesitas para emprender un negocio digital, lo mejor es que esta mentoría grupal está diseñada para que inmediatamente empieces a tomar acción y crees tu empresa digital. Esto lo lograremos a través de una mentoría grupal donde te acompañaré durante 5 semanas donde iremos revisando paso a paso el proceso de tu emprendimiento para que este no sea un curso más.</p>
+				</div>
+				<div class="col-md-6">
+					<img src="img-bio.jpg" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<img src="asesoria-online-marketing-guadalajara.jpg" alt="Ericka Cuevas" class="img-fluid lea">
+				</div>
+				<div class="col-md-6">
+					<h3>Temario</h3>
+
+					<div id="accordion">
+					  <div class="card">
+					    <div class="card-header" id="headingOne">
+					      <h5 class="mb-0">
+					        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					          SEMANA 1: TU NEGOCIO Y REDES SOCIALES
+					        </button>
+					      </h5>
+					    </div>
+
+					    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+					      <div class="card-body">
+					      	<ul>
+					      		<li>Tu negocio I: ¿Quién es tu avatar?</li>
+					      		<li>Tu negocio II: ¿Qué vas a vender?</li>
+					      		<li>Tu marca, tu logo.</li>
+					      		<li>Tus textos, propuesta de valor, misión y visión.</li>
+					      		<li>Inicio en Instagram</li>
+					      		<li>Inicio en Facebook</li>
+					      		<li>Inicio en LinkedIn</li>
+					      	</ul>
+					       
+					      </div>
+					    </div>
+					  </div>
+
+					  <div class="card">
+					    <div class="card-header" id="headingTwo">
+					      <h5 class="mb-0">
+					        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					          SEMANA 2: SITIO WEB
+					        </button>
+					      </h5>
+					    </div>
+					    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+					      <div class="card-body">
+					        <ul>
+					        	<li>Tu blog, web o ambos</li>
+					        	<li>SEO básico para tu blog y primeros post</li>
+					        	<li>Tu primera guía</li>
+					        	<li>Tus TOP imágenes</li>
+					        	<li>Tu contenido mínimo viable</li>
+					        </ul>
+					      </div>
+					    </div>
+					  </div>
+
+					  <div class="card">
+					    <div class="card-header" id="headingThree">
+					      <h5 class="mb-0">
+					        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					          SEMANA 3: PLAN DE CONTENIDOS
+					        </button>
+					      </h5>
+					    </div>
+					    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+					      <div class="card-body">
+					        <ul>
+					        	<li>Tu plan de promoción anual</li>
+					        	<li>Tu lanzamiento mínimo viable</li>
+					        	<li>Creación de contenidos</li>
+					        	<li>Tu YouTube</li>
+					        </ul>
+					      </div>
+					    </div>
+					  </div>
+
+					  <div class="card">
+					    <div class="card-header" id="headingfour">
+					      <h5 class="mb-0">
+					        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapseThree">
+					          SEMANA 4: EMAIL MARKETING Y ESTADÍSTICAS
+					        </button>
+					      </h5>
+					    </div>
+					    <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
+					      <div class="card-body">
+					        <ul>
+					        	<li>Tu primer Lead Magnet</li>
+					        	<li>Tu newsletter</li>
+					        	<li>Lanza una campaña de Ads</li>
+					        	<li>Medir y evolucionar tu negocio digital</li>
+					        	<li>Checklist de auditoría</li>
+					        </ul>
+					      </div>
+
+					    </div>
+					  </div>
+
+					</div>
+					<p><small>*Plan sujeto a cambios según el grupo.</small></p>
+
+					<a class="enlace" href="https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=85936825-d1c55695-0a9b-4336-b706-13ce54ebeac9" target="_blank">COMPRAR CURSO</a>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="bio-ericka">
+		<div class="container">
+			<div class="row align-items-end">
+				<div class="col-md-6">
+					<h4>Ericka Cuevas</h4>
+					<p>Me apasiona ayudar a profesionistas y empresas a crecer digitalmente, ayudándolos a desarrollarse con estrategias de marketing online.</p>
+
+					<p>En mis años de experiencia descubrí que hay millones de profesionales expertos y talentosos en su ramo, que no saben como darse a conocer en las redes sociales, ya que no cuentan con las herramientas de mercadotecnia, ni el tiempo para crear contenido y hacer publicaciones en redes sociales.</p>
+
+					<p>Comprendo lo difícil que puede ser emprender una marca desde cero, sin conocimiento y acompañamiento, por eso comparto información de marketing en mi blog personal para que las personas aprendan a usar estrategias de mercadotecnia. Y a su vez abrí la agencia Hidra Marketing, para ayudar a profesionales y empresarios que no tienen tiempo de gestionar sus redes sociales, ayudándolos a crear su contenido de valor para que tengan la libertad de dedicarse a su vida y a su negocio.</p>
+
+					<p>Soy una apasionada del marketing y te quiero compartir todo el contenido de alto valor que he adquirido, para que puedas tener la independencia que siempre soñaste.</p>
+
+					<p>Creo que empezando a tomar acción, con constancia y actitud puedes llegar a donde desees.</p>
+				</div>
+				<div class="col-md-6" style="text-align: center;">
+					<img src="ericka-courses.png" alt="Ericka Cuevas">
+				</div>
+			</div>
+		</div>
+		
+	</section>
+
+	<section id="yes-no">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="cuadro yes">
+						<h4><img src="check-circle-solid.png" class="img-fluid check-head" alt="check"> ES PARA TI</h4>
+						<p><img src="check-circle-solid.png" class="img-fluid check-img" alt="check"> Si eres emprendedor y quieres iniciar un nuevo negocio online.</p>
+						<p><img src="check-circle-solid.png" class="img-fluid check-img" alt="check"> Si eres profesionista y quieres independizarte.</p>
+						<p><img src="check-circle-solid.png" class="img-fluid check-img" alt="check"> Si quieres crear un blog y monetizarlo.</p>
+						<p><img src="check-circle-solid.png" class="img-fluid check-img" alt="check"> Si eres un profesional que quiere destacar en el mundo laboral.</p>
+						<p><img src="check-circle-solid.png" class="img-fluid check-img" alt="check"> Si tienes un negocio y quieres aumentar tus ventas gestionando tus redes sociales.</p>
+						<p><img src="check-circle-solid.png" class="img-fluid check-img" alt="check"> Si acabas de iniciar un nuevo proyecto y no tienes el capital para pagar una agencia de marketing.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="cuadro no">
+					<h4><img src="times-solid.png" class="img-fluid tache-head" alt="tache"> NO ES PARA TI</h4>
+					<p><img src="times-solid.png" class="img-fluid tache-img" alt="tache"> Si eres empresario y no tienes tiempo</p>
+					<p><img src="times-solid.png" class="img-fluid tache-img" alt="tache"> Si consideras que las redes sociales no son un punto crítico dentro de tu negocio.</p>
+					<p><img src="times-solid.png" class="img-fluid tache-img" alt="tache"> Si no tienes tiempo para hacerlo tu mismo, en este caso te recomendamos nuestros servicios.</p>
+					<p><img src="times-solid.png" class="img-fluid tache-img" alt="tache"> Si buscas una formación que te ayude a crear un negocio de marketing. Lo siento, este curso no va sobre eso. Aquí solo te acompañaré y te daré las herramientas para tomar acción.</p>
+					<p><img src="times-solid.png" class="img-fluid tache-img" alt="tache"> Si crees que esto va a funcionar por si solo sin constancia y sin practicar y no tienes ganas de dedicarle algo de tiempo.</p>
+					</div>
+				</div>
+			</div>
+			<a class="enlace" href="https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=85936825-d1c55695-0a9b-4336-b706-13ce54ebeac9" target="_blank">COMPRAR CURSO</a>
+		</div>
+	</section>
+
+	<section id="bio-curso">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<div class="cuadro">
+					<img src="img-bio.jpg" alt="" class="img-fluid">
+						<h4>Lo que incluye la mentoría grupal Emprende y vende en redes sociales:</h4>
+
+						<p><img src="check-solid.png" class="img-fluid check-curse">5 Mentorías grupales  a través de zoom durante el <b> mes de octubre</b>. (Cada viernes 12:00pm)</p>
+						<p><img src="check-solid.png" class="img-fluid check-curse">Acceso para toda la vida de las sesiones grabadas.</p>
+						<p><img src="check-solid.png" class="img-fluid check-curse">Plantillas con ejemplos y técnicas de embudos de venta.</p>
+						<p><img src="check-solid.png" class="img-fluid check-curse">Plantilla de calendario de contenidos para tus redes sociales.</p>
+						<p><img src="check-solid.png" class="img-fluid check-curse">Asesoría personalizada durante 4 semanas</p>
+						<p><img src="check-solid.png" class="img-fluid check-curse">Soporte vía WhatsApp con Ericka Cuevas de Lunes a Viernes de 9:00 - 5:00 pm</p>
+						<p><img src="check-solid.png" class="img-fluid check-curse">Recursos descargables</p>
+						<p><img src="check-solid.png" class="img-fluid check-curse">Más herramientas de contenidos </p>
+						<p><small>*Cupo limitado de mentoría grupal a 25 personas.</small></p>
+					</div>
+					<a class="enlace" href="https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=85936825-d1c55695-0a9b-4336-b706-13ce54ebeac9" target="_blank">COMPRAR CURSO</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="cierre">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-10">
+					<h5><b>EMPIEZA A TOMAR ACCIÓN ACOMPAÑADO DE UN PROFESIONAL</b></h5>
+					<h5><span>MENTORÍA GRUPAL: EMPRENDE Y VENDE EN REDES SOCIALES</span></h5>
+					<p><del>DE $1,200</del></p>
+					<p><strong>POR SOLO $990</strong></p>
+					<a class="enlace" href="https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=85936825-d1c55695-0a9b-4336-b706-13ce54ebeac9" target="_blank">COMPRAR CURSO</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

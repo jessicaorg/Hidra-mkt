@@ -1,0 +1,8 @@
+.articulo {
+  background: #000;
+  width: 100%;
+  height: 400px;
+}
+.articulo .texto {
+  color: red;
+}
